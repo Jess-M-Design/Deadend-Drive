@@ -1,0 +1,247 @@
+body {
+  font-family: sans-serif;
+  background: #222;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+  gap: 2px;
+  margin: 20px;
+}
+
+.board-cell {
+  width: 50px;
+  height: 50px;
+  background: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 5px;
+}
+
+.token {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  position: absolute;
+  z-index: 2;
+  /* token sits above trap */
+  opacity: 0.85;
+  /* slightly transparent so trap shows through */
+}
+
+.trap-cell .trap-icon {
+  z-index: 1;
+  /* trap under the token */
+}
+
+
+.exit-cell {
+  background-color: rgb(124, 205, 124);
+  border: 2px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px; /* make the door emoji bigger */
+}
+
+
+.trap-cell {
+  background-color: #333;
+  /* dark grey for trap tile */
+  border: 1px solid #666;
+  /* subtle border so it stands out */
+}
+
+.trap-icon {
+  font-size: 28px;
+  /* larger, clear icon */
+  color: #ffcc00;
+  /* golden yellow so it pops */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+
+#cards {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: default;
+}
+
+
+/* dice */
+
+
+
+button {
+  position: relative;
+  top:80px;
+  left:10px;
+  padding: 15px 50px;
+  color: #fff;
+  background-color: #f4d35e;
+  border: none;
+  font-size: 20px;
+  border-radius: 20px; 
+  box-shadow: 1px 3px #50514F;
+  outline: none;
+  transition: .3s; 
+}
+
+button:hover, button:active {
+  outline: none;
+  background: #50514F;
+  cursor: pointer;
+  transform: translateY(15px); 
+}
+
+.game {
+  position: relative;
+  width: auto;
+  height: 100%; 
+}
+
+.container {
+  position: relative;
+  display: inline-block;
+  top: 200px;
+}
+
+.dice {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transition: transform 1s; 
+}
+
+.dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: -10px 5px 5px -10px;
+  border-radius: 20px;
+  background-color: #f25f5c;
+  box-shadow: inset 2px 2px #d90429;
+}
+
+.dice-one {
+  position: absolute;
+  left: 150px; 
+}
+
+.dice-two {
+  position: absolute;
+  left: -50px;
+  
+}
+
+.side {
+  position: absolute;
+  background-color: #ffF;
+  border-radius:5px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  line-height: 2em;
+}
+
+.side:nth-child(1) {
+  transform: translateZ(3.1em); }
+
+.side:nth-child(6) {
+  transform: rotateY(90deg) translateZ(3.1em); }
+
+.side:nth-child(3) {
+  transform: rotateY(-90deg) translateZ(3.1em); }
+
+.side:nth-child(4) {
+  transform: rotateX(90deg) translateZ(3.1em); }
+
+.side:nth-child(5) {
+  transform: rotateX(-90deg) translateZ(3.1em); }
+
+.side:nth-child(2) {
+  transform: rotateY(-180deg) translateZ(3.1em); }
+
+.show-1 {
+  transform: rotateX(720deg) rotateZ(-720deg); }
+
+.show-6 {
+  transform: rotateX(-900deg) rotateZ(1080deg); }
+
+.show-3 {
+  transform: rotateY(-450deg) rotateZ(-1440deg); }
+
+.show-4 {
+  transform: rotateY(810deg) rotateZ(720deg); }
+
+.show-5 {
+  transform: rotateX(-810deg) rotateZ(-1080deg); }
+
+.show-2 {
+  transform: rotateX(450deg) rotateZ(-720deg); }
+
+.two-1, .three-1, .four-1, .five-1, .six-1 {
+  top: 20%;
+  left: 20%; 
+}
+
+.four-3, .five-3, .six-4 {
+  top: 20%;
+  left: 80%; }
+
+.one-1, .three-2, .five-5 {
+  top: 50%;
+  left: 50%; }
+
+.four-2, .five-2, .six-3 {
+  top: 80%;
+  left: 20%; }
+
+.two-2, .three-3, .four-4, .five-4, .six-6 {
+  top: 80%;
+  left: 80%; }
+
+.six-2 {
+  top: 50%;
+  left: 20%; }
+
+.six-5 {
+  top: 50%;
+  left: 80%; 
+}
+
